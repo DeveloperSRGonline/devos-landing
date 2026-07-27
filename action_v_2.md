@@ -33,7 +33,7 @@ Follow top to bottom, in order. Each phase is an independent, completable unit w
 - The toggle should flip `"monthly"` ↔ `"yearly"`.
 - Keep the store ephemeral (no `persist` middleware on `uiStore`).
 
-### A.3 Create `store/workspaceStore.ts`
+### A.3 Create `store/workspaceStore.ts` (Done)
 - Use Zustand with the `persist` middleware and `localStorage` as the storage adapter.
 - Implement the full `WorkspaceStore` interface:
   - **Projects:** `projects`, `activeProjectId`, `setActiveProject`, `addProject`, `updateProject`, `deleteProject`
