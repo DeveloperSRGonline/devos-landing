@@ -53,6 +53,8 @@ export const metadata: Metadata = {
 };
 
 
+import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,11 +66,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-slate-950 text-slate-100 font-sans">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SmoothScrollProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
 }
+
 
