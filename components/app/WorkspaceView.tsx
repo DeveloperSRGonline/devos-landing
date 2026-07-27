@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useWorkspaceStore } from "@/store/workspaceStore";
+import { NotesPanel } from "./NoteEditor";
 
 export function WorkspaceView() {
   const { activeTab, setActiveTab } = useWorkspaceStore();
@@ -36,11 +37,11 @@ export function WorkspaceView() {
       </div>
 
       {/* Tab Content Panels */}
-      <div className="p-6 rounded-2xl bg-surface/50 border border-white/10 min-h-[400px] flex items-center justify-center text-white/50 text-sm">
-        {activeTab === "notes" && <div>Notes Panel (Phase E)</div>}
-        {activeTab === "snippets" && <div>Snippets coming soon</div>}
-        {activeTab === "ai-memory" && <div>AI Memory coming soon</div>}
-        {activeTab === "learning" && <div>Learning coming soon</div>}
+      <div className="p-6 rounded-2xl bg-surface/50 border border-white/10 min-h-[400px]">
+        {activeTab === "notes" && <NotesPanel />}
+        {activeTab === "snippets" && <div className="text-center py-20 text-white/50 text-sm">Snippets coming soon</div>}
+        {activeTab === "ai-memory" && <div className="text-center py-20 text-white/50 text-sm">AI Memory coming soon</div>}
+        {activeTab === "learning" && <div className="text-center py-20 text-white/50 text-sm">Learning coming soon</div>}
       </div>
     </div>
   );
