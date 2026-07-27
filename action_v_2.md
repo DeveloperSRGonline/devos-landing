@@ -79,16 +79,16 @@ git commit -m "feat: add workspace store, types, and demo seed data"
 
 ---
 
-## PHASE B — Landing Page Wiring (Minimal Edits)
+## PHASE B — Landing Page Wiring (Minimal Edits) (Done)
 
 > **Goal:** Wire up the existing V1 landing page buttons to real destinations and add the pricing toggle. No new routes yet — just plumbing.
 
-### B.1 Update `components/sections/Hero.tsx`
+### B.1 Update `components/sections/Hero.tsx` (Done)
 - Change the primary CTA `<Button>` ("Start Building Free") to a Next.js `<Link href="/app">` wrapping a `<Button>` styled element (or use `asChild`-style pattern).
 - Do not change the secondary CTA ("See How It Works") — it already scrolls correctly.
 - Do not change any other markup, spacing, or visual in this component.
 
-### B.2 Update `components/sections/Features.tsx`
+### B.2 Update `components/sections/Features.tsx` (Done)
 - Below each feature card's description text, add a small `<Link href="/app#<tab>">Try it →</Link>` text link.
 - Map each feature card to its relevant tab hash:
   - Project Workspaces → `/app`
@@ -100,7 +100,7 @@ git commit -m "feat: add workspace store, types, and demo seed data"
 - Style the link small and muted (use an existing text utility class, not new CSS).
 - Do not change card layout, grid, icons, or any other markup.
 
-### B.3 Update `components/sections/Pricing.tsx`
+### B.3 Update `components/sections/Pricing.tsx` (Done)
 - Import `useUIStore` from the existing store.
 - Above the pricing grid, add a pill-style toggle: two buttons — "Monthly" and "Yearly".
   - The active period button has the accent background; the inactive one is outlined.
@@ -111,7 +111,7 @@ git commit -m "feat: add workspace store, types, and demo seed data"
 - Change primary CTA buttons in each plan card to `<Link href="/app">`.
 - Do not change the card layout, grid, feature lists, or badge positioning.
 
-### B.4 Update `components/sections/FinalCTA.tsx`
+### B.4 Update `components/sections/FinalCTA.tsx` (Done)
 - Change the CTA button to a Next.js `<Link href="/app">` (same pattern as Hero).
 - No other changes to this component.
 

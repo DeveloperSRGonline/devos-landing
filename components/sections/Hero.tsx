@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { DashboardMockup } from "@/components/mockups/DashboardMockup";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -36,10 +37,12 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <Button size="lg" className="w-full sm:w-auto flex items-center justify-center gap-2">
-                <span>Start Building Free</span>
-                <ArrowRight className="w-4 h-4" />
-              </Button>
+              <Link href="/app" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full flex items-center justify-center gap-2">
+                  <span>Start Building Free</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
               <Button 
                 variant="secondary" 
                 size="lg" 
