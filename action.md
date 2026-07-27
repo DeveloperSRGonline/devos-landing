@@ -154,18 +154,16 @@ git commit -m "feat: build Button, Badge, Card, and AccordionItem UI primitives"
 
 ## PHASE 4 — Zustand Store
 
-### 4.1 Build `store/uiStore.ts`
-Create a Zustand store with:
-- `isMobileMenuOpen: boolean` + `toggleMobileMenu()` / `closeMobileMenu()`
-- `openFaqIndex: number | null` + `toggleFaq(index: number)`
+### 4.1 Build `store/uiStore.ts` (Completed)
+- [x] Create a Zustand store with:
+  - `isMobileMenuOpen: boolean` + `toggleMobileMenu()` / `closeMobileMenu()`
+  - `openFaqIndex: number | null` + `toggleFaq(index: number)`
 
 Keep it small — this store should not grow beyond these two concerns for this project.
 
-### 4.2 Commit
-```bash
-git add .
-git commit -m "feat: add Zustand store for mobile menu and FAQ accordion state"
-```
+### 4.2 Commit (Completed)
+- [x] `git add .`
+- [x] `git commit -m "feat: add Zustand store for mobile menu and FAQ accordion state"`
 
 **✅ Checkpoint:** store file compiles with no TypeScript errors, exports a typed hook (e.g. `useUIStore`).
 
