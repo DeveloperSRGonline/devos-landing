@@ -167,15 +167,15 @@ git commit -m "feat: make DashboardMockup interactive in ProductPreview"
 
 ---
 
-## PHASE D — `/app` Route Shell
+## PHASE D — `/app` Route Shell (Done)
 
 > **Goal:** Build the full product UI shell: layout, sidebar, topbar, and project switching. No tab content yet — just the frame.
 
-### D.1 Read the Next.js docs on nested layouts
+### D.1 Read the Next.js docs on nested layouts (Done)
 - Run: `Get-ChildItem "node_modules/next/dist/docs/" -Recurse -Filter "*.md"` (or use `ls`) to see what docs are available.
 - Read the relevant guide on `app/` directory nested layouts before creating any files.
 
-### D.2 Create `app/app/layout.tsx`
+### D.2 Create `app/app/layout.tsx` (Done)
 - This layout wraps only the `/app` route — it must NOT include the landing page `<Navbar>` or `<Footer>`.
 - Layout structure: full-height (`h-screen overflow-hidden`) flex column:
   - **TopBar** row at the top (full width)
@@ -183,7 +183,7 @@ git commit -m "feat: make DashboardMockup interactive in ProductPreview"
 - No `<html>` or `<body>` tags here — the root `app/layout.tsx` already provides those.
 - Import and render `<AppTopbar />` and `<AppSidebar />` (create stub files first if needed).
 
-### D.3 Create `components/app/AppSidebar.tsx`
+### D.3 Create `components/app/AppSidebar.tsx` (Done)
 - Fixed-width left panel (e.g., `w-64`) with a dark surface background.
 - Structure (top to bottom):
   1. **Brand row:** "DevOS" wordmark + a `<Link href="/">← Home</Link>` small link.
@@ -192,13 +192,13 @@ git commit -m "feat: make DashboardMockup interactive in ProductPreview"
   4. **Footer row:** "Search (Cmd+K)" button that calls `openSearch()`.
 - On hover of each project item, show a small `×` delete button (calls `deleteProject(id)` on click, with a confirmation check: do not delete if it's the last project).
 
-### D.4 Create `components/app/AppTopbar.tsx`
+### D.4 Create `components/app/AppTopbar.tsx` (Done)
 - Full-width top bar with a subtle bottom border.
 - Left: current active project name + icon (read from `workspaceStore`).
 - Right: a search button ("⌘ K Search...") styled as a pill input — clicking it calls `openSearch()`.
 - This component does not contain the search logic itself — it just triggers the overlay.
 
-### D.5 Create `components/app/NewProjectModal.tsx`
+### D.5 Create `components/app/NewProjectModal.tsx` (Done)
 - A centered modal dialog (backdrop overlay + card) with:
   - Text input for project name (required).
   - Color picker: 6 preset accent color swatches — clicking selects one (the selected swatch has a ring).
@@ -207,26 +207,26 @@ git commit -m "feat: make DashboardMockup interactive in ProductPreview"
   - "Cancel" button (or click outside) → closes without saving.
 - Modal state (open/close) managed with local `useState` in `AppSidebar.tsx`, passed as a prop.
 
-### D.6 Create `app/app/page.tsx`
+### D.6 Create `app/app/page.tsx` (Done)
 - Mark as `"use client"` (this is a fully interactive page).
 - On mount (`useEffect`), check if `workspaceStore.projects` is empty. If empty, hydrate with `seedProjects`, `seedNotes`, `seedSnippets`, `seedAIMemories`, `seedLearningItems` from `data/demo.ts`, then set `activeProjectId` to `"p1"`.
 - Register a global keyboard listener for `Cmd+K` / `Ctrl+K` → calls `openSearch()`.
 - Render `<WorkspaceView />` in the main content area (stub it for now).
 - Render `<SearchOverlay />` conditionally when `isSearchOpen === true` (stub it for now).
 
-### D.7 Handle URL hash tab routing
+### D.7 Handle URL hash tab routing (Done)
 - In `app/app/page.tsx`, read `window.location.hash` on mount.
 - Map hashes to tabs: `#notes`, `#snippets`, `#ai-memory`, `#learning`.
 - If a valid hash is present, call `setActiveTab(tab)` after hydrating seed data.
 
-### D.8 Visual check
+### D.8 Visual check (Done)
 - `npm run dev` → navigate to `http://localhost:3000/app`.
 - Confirm: shell renders (topbar + sidebar + content area), no 404.
 - Confirm: sidebar shows 3 seed projects, clicking each highlights the active one.
 - Confirm: "New Project" modal opens and creates a new project.
 - Confirm: landing page at `/` still works completely.
 
-### D.9 Commit
+### D.9 Commit (Done)
 ```bash
 git add .
 git commit -m "feat: build /app route shell with sidebar, topbar, and project switching"
