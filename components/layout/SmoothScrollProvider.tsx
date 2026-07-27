@@ -1,28 +1,31 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { ReactLenis } from "lenis/react";
 import type { ReactNode } from "react";
 
 /**
  * SmoothScrollProvider
  *
- * Wraps the app in a global Lenis smooth-scroll instance.
- * Using root=true attaches Lenis to the window/document so
- * the native scroll events are intercepted globally.
+ * Wraps landing page routes in Lenis smooth-scroll.
+ * Excludes /app route so nested scroll containers (notes, snippets, sidebar)
+ * scroll natively with the mouse wheel without Lenis interference.
  */
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
+  // If in the interactive web app workspace (/app), bypass global Lenis root smooth scroll
+  if (pathname?.startsWith("/app")) {
+    return <>{children}</>;
+  }
+
   return (
     <ReactLenis
       root
       options={{
-        // Controls how quickly the scroll "catches up" to the user's input.
-        // Lower = smoother / slower, higher = snappier. 0.1 is the sweet spot.
         lerp: 0.1,
-        // Wheel scroll speed multiplier.
         wheelMultiplier: 0.8,
-        // Touch scroll speed multiplier.
         touchMultiplier: 1.5,
-        // Smoothes out jitter between wheel events.
         smoothWheel: true,
       }}
     >
@@ -30,3 +33,4 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
     </ReactLenis>
   );
 }
+
