@@ -236,7 +236,7 @@ git commit -m "feat: build /app route shell with sidebar, topbar, and project sw
 
 ---
 
-## PHASE E — Workspace View + Notes Tab
+## PHASE E — Workspace View + Notes Tab (Done)
 
 > **Goal:** Build the tabbed workspace panel and implement the first (and most important) tab: Notes.
 
