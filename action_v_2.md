@@ -130,11 +130,11 @@ git commit -m "feat: wire landing page CTAs to /app route and add pricing toggle
 
 ---
 
-## PHASE C — Interactive DashboardMockup
+## PHASE C — Interactive DashboardMockup (Done)
 
 > **Goal:** Make the mockup in the ProductPreview section clickable. The Hero version stays static.
 
-### C.1 Add `interactive` prop to `DashboardMockup.tsx`
+### C.1 Add `interactive` prop to `DashboardMockup.tsx` (Done)
 - Add an optional `interactive?: boolean` prop (defaults to `false`).
 - When `interactive={false}` (the default): component renders exactly as it does today — no changes to the Hero experience.
 - When `interactive={true}`:
@@ -148,16 +148,16 @@ git commit -m "feat: wire landing page CTAs to /app route and add pricing toggle
   - Add a small "Live Demo" badge in the top-right corner of the mockup chrome.
   - Content data for the 3 views should use the seed data text (import strings from `data/demo.ts`) so the demo feels real.
 
-### C.2 Update `components/sections/ProductPreview.tsx`
+### C.2 Update `components/sections/ProductPreview.tsx` (Done)
 - Change the existing `<DashboardMockup />` call to `<DashboardMockup interactive={true} />`.
 - No other changes to `ProductPreview.tsx`.
 
-### C.3 Visual check
+### C.3 Visual check (Done)
 - Navigate to the landing page's "See DevOS in action" section.
 - Click each sidebar item — confirm the content area changes with a smooth fade.
 - Scroll to the Hero — confirm the DashboardMockup there is still static (unchanged).
 
-### C.4 Commit
+### C.4 Commit (Done)
 ```bash
 git add .
 git commit -m "feat: make DashboardMockup interactive in ProductPreview"
