@@ -423,7 +423,7 @@ git commit -m "feat: implement learning tracker tab with status cycling"
 
 ---
 
-## PHASE I — Unified Search Overlay
+## PHASE I — Unified Search Overlay (Done)
 
 > **Goal:** Implement the Cmd+K search that queries across all content types in real time.
 
