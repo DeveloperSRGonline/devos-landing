@@ -109,36 +109,14 @@ git commit -m "chore: set up folder structure and empty component files"
 
 ---
 
-## PHASE 2 — Design Tokens & Fonts
-
-### 2.1 Add color tokens
-Open `tailwind.config.ts` → inside `theme.extend.colors`, add every token from the design system table (bg-base, bg-surface, bg-surface-2, border, text-primary, text-secondary, text-muted, accent, accent-hover, accent-soft, accent-secondary, success). Use the exact hex values from the plan doc.
-
-### 2.2 Add font family
-In `app/layout.tsx`:
-- Import `Geist` and `Geist_Mono` from `next/font/google` (or `next/font/local` if using downloaded files).
-- Configure both with `subsets: ["latin"]` and a CSS variable (e.g. `--font-geist-sans`, `--font-geist-mono`).
-- Apply the variable classNames to the `<html>` or `<body>` tag.
-
-### 2.3 Register fonts in Tailwind
-In `tailwind.config.ts` → `theme.extend.fontFamily` → map `sans` and `mono` to the CSS variables from step 2.2.
-
-### 2.4 Set base page background/text color
-In `app/globals.css`, under `@layer base`, set `body { background: var(--bg-base); color: var(--text-primary); }` (or the Tailwind-class equivalent on `<body>` in `layout.tsx`).
-
-### 2.5 Build `lib/utils.ts`
-Add the standard `cn()` helper that merges `clsx` + `tailwind-merge`. (Search "shadcn cn utility" if unfamiliar with the exact snippet — it's 4 lines, same everywhere.)
-
-### 2.6 Sanity check
-Temporarily render one line of text in `app/page.tsx` in a heading size, confirm the font and background color are applied correctly in the browser.
-
-### 2.7 Commit
-```bash
-git add .
-git commit -m "feat: configure design tokens, fonts, and base styles"
-```
-
-**✅ Checkpoint:** dark background, correct font, color tokens available as Tailwind classes (e.g. `bg-[--bg-surface]` or mapped utility names like `bg-surface`).
+## PHASE 2 — Design Tokens & Fonts (Completed)
+- [x] 2.1 Add color tokens to `globals.css` / `@theme`
+- [x] 2.2 Add font family (`Geist` and `Geist_Mono` configured in `layout.tsx`)
+- [x] 2.3 Register fonts in Tailwind
+- [x] 2.4 Set base page background and text color
+- [x] 2.5 Build `lib/utils.ts` with `cn()` helper
+- [x] 2.6 Build verified cleanly
+- [x] 2.7 Git committed: `feat: configure design tokens, fonts, and base styles`
 
 ---
 
