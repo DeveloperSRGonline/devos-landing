@@ -227,29 +227,14 @@ git commit -m "feat: add typed content data for features, pricing, and FAQ"
 
 ---
 
-## PHASE 8 — Trust Strip, Features, How It Works
+## PHASE 8 — Trust Strip, Features, How It Works (Completed)
 
-### 8.1 Build `components/sections/TrustStrip.tsx`
-- Caption line + a horizontal row (wraps on mobile) of Lucide icons + short labels representing tool categories (Code Editor, Version Control, Docs, AI Chat) — not trademarked logos.
-
-### 8.2 Build `components/sections/Features.tsx`
-- `<section id="features">`, H2 title, subtitle.
-- Grid: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`, map over `data/features.ts`, render each in a `Card` with icon, title, description.
-- Add hover lift/glow to each `Card` instance (via `className` or a `hover:` variant).
-
-### 8.3 Build `components/sections/HowItWorks.tsx`
-- `<section id="how-it-works">`, H2 title.
-- 3 numbered steps (Create a project → Drop in context → Search & resurface), laid out horizontally on desktop, stacked on mobile, with a connecting line/arrow if you want a visual flourish (keep it simple — a CSS border or Lucide arrow icon between steps is enough).
-
-### 8.4 Add both to `app/page.tsx` in order: TrustStrip → Features → HowItWorks (after Hero).
-
-### 8.5 Responsive + hover check at all breakpoints.
-
-### 8.6 Commit
-```bash
-git add .
-git commit -m "feat: add TrustStrip, Features grid, and HowItWorks sections"
-```
+- [x] 8.1 Build `components/sections/TrustStrip.tsx`
+- [x] 8.2 Build `components/sections/Features.tsx`
+- [x] 8.3 Build `components/sections/HowItWorks.tsx`
+- [x] 8.4 Add all to `app/page.tsx` in order: TrustStrip → Features → HowItWorks (after Hero)
+- [x] 8.5 Responsive + hover check at all breakpoints
+- [x] 8.6 Commit (`feat: add TrustStrip, Features grid, and HowItWorks sections`)
 
 **✅ Checkpoint:** 3 more sections live, features grid reflows 1→2→3 columns correctly, hover states visible.
 
