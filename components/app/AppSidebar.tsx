@@ -12,9 +12,11 @@ import {
   Plus, 
   Search, 
   Trash2, 
-  ArrowLeft 
+  ArrowLeft,
+  X
 } from "lucide-react";
 import { useWorkspaceStore } from "@/store/workspaceStore";
+import { useUIStore } from "@/store/uiStore";
 import { NewProjectModal } from "./NewProjectModal";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -36,6 +38,7 @@ export function AppSidebar() {
     openSearch 
   } = useWorkspaceStore();
 
+  const { isMobileMenuOpen, closeMobileMenu } = useUIStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCreateProject = (data: { name: string; color: string; icon: string }) => {
@@ -53,9 +56,26 @@ export function AppSidebar() {
     }
   };
 
+  const handleSelectProject = (id: string) => {
+    setActiveProject(id);
+    closeMobileMenu();
+  };
+
   return (
     <>
-      <aside className="w-64 bg-surface/90 border-r border-white/10 flex flex-col justify-between h-full select-none shrink-0">
+      {/* Mobile Drawer Overlay Backdrop */}
+      {isMobileMenuOpen && (
+        <div
+          onClick={closeMobileMenu}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-opacity"
+        />
+      )}
+
+      <aside
+        className={`fixed md:relative inset-y-0 left-0 z-50 w-64 bg-surface/95 md:bg-surface/90 border-r border-white/10 flex flex-col justify-between h-full select-none shrink-0 transition-transform duration-300 ease-in-out md:translate-x-0 ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
         <div className="p-4 space-y-6">
           {/* Brand Row */}
           <div className="flex items-center justify-between">
@@ -65,13 +85,21 @@ export function AppSidebar() {
               </div>
               <span className="font-bold text-white tracking-tight">DevOS</span>
             </div>
-            <Link
-              href="/"
-              className="text-xs text-white/50 hover:text-white flex items-center gap-1 transition-colors"
-            >
-              <ArrowLeft className="w-3 h-3" />
-              <span>Home</span>
-            </Link>
+            <div className="flex items-center gap-2">
+              <Link
+                href="/"
+                className="text-xs text-white/50 hover:text-white flex items-center gap-1 transition-colors"
+              >
+                <ArrowLeft className="w-3 h-3" />
+                <span>Home</span>
+              </Link>
+              <button
+                onClick={closeMobileMenu}
+                className="md:hidden p-1 text-white/50 hover:text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Projects Section */}
@@ -89,7 +117,7 @@ export function AppSidebar() {
                 return (
                   <div
                     key={project.id}
-                    onClick={() => setActiveProject(project.id)}
+                    onClick={() => handleSelectProject(project.id)}
                     className={`group relative flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium cursor-pointer transition-all ${
                       isActive
                         ? "bg-accent/15 text-white border-l-2 border-accent"
@@ -134,7 +162,10 @@ export function AppSidebar() {
         {/* Footer Row */}
         <div className="p-4 border-t border-white/10">
           <button
-            onClick={openSearch}
+            onClick={() => {
+              openSearch();
+              closeMobileMenu();
+            }}
             className="w-full flex items-center justify-between px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white/60 hover:text-white hover:bg-white/10 transition-all"
           >
             <div className="flex items-center gap-2">
@@ -156,3 +187,4 @@ export function AppSidebar() {
     </>
   );
 }
+
