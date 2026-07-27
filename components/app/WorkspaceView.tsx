@@ -4,6 +4,7 @@ import React from "react";
 import { useWorkspaceStore } from "@/store/workspaceStore";
 import { NotesPanel } from "./NoteEditor";
 import { SnippetsPanel } from "./SnippetsPanel";
+import { AIMemoryPanel } from "./AIMemoryPanel";
 
 export function WorkspaceView() {
   const { activeTab, setActiveTab } = useWorkspaceStore();
@@ -41,7 +42,7 @@ export function WorkspaceView() {
       <div className="p-6 rounded-2xl bg-surface/50 border border-white/10 min-h-[400px]">
         {activeTab === "notes" && <NotesPanel />}
         {activeTab === "snippets" && <SnippetsPanel />}
-        {activeTab === "ai-memory" && <div className="text-center py-20 text-white/50 text-sm">AI Memory coming soon</div>}
+        {activeTab === "ai-memory" && <AIMemoryPanel />}
         {activeTab === "learning" && <div className="text-center py-20 text-white/50 text-sm">Learning coming soon</div>}
       </div>
     </div>

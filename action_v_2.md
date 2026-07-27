@@ -326,7 +326,7 @@ git commit -m "feat: implement snippet library tab with copy-to-clipboard"
 
 ---
 
-## PHASE G — AI Memory Tab
+## PHASE G — AI Memory Tab (Done)
 
 > **Goal:** Implement the AI Chat Memory tab with source badges and tag filtering.
 
