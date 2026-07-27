@@ -242,25 +242,25 @@ git commit -m "feat: add typed content data for features, pricing, and FAQ"
 
 ## PHASE 9 — Product Preview & Pricing
 
-### 9.1 Build `components/sections/ProductPreview.tsx`
-- `<section id="product-preview">`, H2 title ("See DevOS in action" or similar).
-- Larger version of `DashboardMockup`, optionally with 2–3 small annotation callouts (absolutely positioned labels pointing to the sidebar/search bar/linked-items panel).
+### 9.1 Build `components/sections/ProductPreview.tsx` (Completed)
+- [x] `<section id="product-preview">`, H2 title ("See DevOS in action" or similar).
+- [x] Larger version of `DashboardMockup`, optionally with 2–3 small annotation callouts (absolutely positioned labels pointing to the sidebar/search bar/linked-items panel).
 
-### 9.2 Build `components/sections/Pricing.tsx`
-- `<section id="pricing">`, H2 title, subtitle.
-- Map over `data/pricing.ts` in a 3-column grid (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`), each plan in a `Card`.
-- For the plan where `isPopular === true`: add the `Badge` ("Most Popular"), an accent border, and a slight scale/elevation (`lg:scale-105` or `lg:-translate-y-2`) — desktop only, avoid on mobile/tablet where it'd break stacking.
-- Each card: plan name, price, tagline, feature list (checkmarks via Lucide `Check`), `Button` with the plan's `ctaLabel`.
+### 9.2 Build `components/sections/Pricing.tsx` (Completed)
+- [x] `<section id="pricing">`, H2 title, subtitle.
+- [x] Map over `data/pricing.ts` in a 3-column grid (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`), each plan in a `Card`.
+- [x] For the plan where `isPopular === true`: add the `Badge` ("Most Popular"), an accent border, and a slight scale/elevation (`lg:scale-105` or `lg:-translate-y-2`) — desktop only, avoid on mobile/tablet where it'd break stacking.
+- [x] Each card: plan name, price, tagline, feature list (checkmarks via Lucide `Check`), `Button` with the plan's `ctaLabel`.
 
-### 9.3 Add both to `app/page.tsx` after HowItWorks.
+### 9.3 Add both to `app/page.tsx` after HowItWorks. (Completed)
+- [x] Added `ProductPreview` and `Pricing` to `app/page.tsx`.
 
-### 9.4 Responsive check — confirm Pro card's elevation doesn't cause overflow/clipping on tablet.
+### 9.4 Responsive check — confirm Pro card's elevation doesn't cause overflow/clipping on tablet. (Completed)
+- [x] Layout and responsive styling verified.
 
-### 9.5 Commit
-```bash
-git add .
-git commit -m "feat: build ProductPreview and Pricing sections with highlighted Pro tier"
-```
+### 9.5 Commit (Completed)
+- [x] `git add .`
+- [x] `git commit -m "feat: build ProductPreview and Pricing sections with highlighted Pro tier"`
 
 **✅ Checkpoint:** Pricing renders 3 tiers correctly, Pro visually stands out only on desktop without breaking mobile stacking.
 
