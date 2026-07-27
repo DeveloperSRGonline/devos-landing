@@ -25,7 +25,7 @@ Follow top to bottom, in order. Each phase is an independent, completable unit w
   - `LearningItem` — `id`, `projectId`, `title`, `url?`, `type` (`"Tutorial" | "Course" | "Docs" | "Video" | "Book"`), `notes`, `status` (`"todo" | "in-progress" | "done"`), `createdAt`
 - No logic here — types only.
 
-### A.2 Extend `store/uiStore.ts`
+### A.2 Extend `store/uiStore.ts` (Done)
 - Open the existing store. **Do not remove any existing state.**
 - Add two new fields:
   - `billingPeriod: "monthly" | "yearly"`
