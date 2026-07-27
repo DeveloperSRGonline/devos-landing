@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevOS — Developer Context & Knowledge Operating System
 
-## Getting Started
+DevOS is a modern, high-performance landing page and developer context management platform built to unify code snippets, project notes, architecture specifications, and AI chat memory into one structured workspace.
 
-First, run the development server:
+![DevOS Landing Page](https://raw.githubusercontent.com/DeveloperSRGonline/devos-landing/main/public/file.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ⚡ Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + Custom Design Tokens
+- **State Management:** Zustand
+- **Icons:** Lucide React
+- **Typography:** Geist & Geist Mono (`next/font/google`)
+- **Deployment:** Vercel
+
+---
+
+## ✨ Features
+
+- **Hero & Interactive Dashboard Mockup:** Modern dark-mode aesthetic with live visual annotations highlighting quick search, knowledge graph, and AI context synthesis.
+- **Trust Strip & Integrations:** Highlights seamless integration across developer tools, version control, documentation, and AI assistants.
+- **Feature Matrix:** 6 core features covering context graph, prompt memory, code snippet hub, unified search, team knowledge base, and IDE sync.
+- **Workflow Walkthrough (How It Works):** 3-step intuitive breakdown of workspace creation, context drop-in, and instant search retrieval.
+- **Product Preview:** Detailed annotated preview showing DevOS context graph and real-time LLM indexing.
+- **Transparent Pricing:** Tiered pricing cards (Starter, Pro, Team) with prominent visual elevation for the Pro tier.
+- **Interactive FAQ Accordion:** Accessible accordion powered by Zustand store state.
+- **High-Conversion Final CTA:** Full-width gradient section with call-to-action triggers.
+- **Accessibility & SEO:** 100% semantic HTML (`<nav>`, `<main>`, `<footer>`), keyboard navigation, custom ARIA attributes, full metadata, `sitemap.xml`, and `robots.txt`.
+
+---
+
+## 📁 Project Structure
+
+```
+devos/
+├── app/
+│   ├── layout.tsx         # Root layout with Geist font & SEO metadata
+│   ├── page.tsx           # Home page aggregating all 8 sections
+│   ├── globals.css        # Tailwind directives & core CSS design tokens
+│   ├── robots.ts          # Automated robots.txt generation
+│   └── sitemap.ts         # Dynamic sitemap generation
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.tsx     # Glassmorphic header with mobile drawer
+│   │   └── Footer.tsx     # Comprehensive footer with quick links
+│   ├── mockups/
+│   │   └── DashboardMockup.tsx # Accessible SVG/CSS developer dashboard UI
+│   ├── sections/
+│   │   ├── Hero.tsx
+│   │   ├── TrustStrip.tsx
+│   │   ├── Features.tsx
+│   │   ├── HowItWorks.tsx
+│   │   ├── ProductPreview.tsx
+│   │   ├── Pricing.tsx
+│   │   ├── FAQ.tsx
+│   │   └── FinalCTA.tsx
+│   └── ui/
+│       ├── Button.tsx     # Reusable typed button primitive
+│       ├── Badge.tsx      # Tag/Pill UI primitive
+│       ├── Card.tsx       # Standard card layout container
+│       └── AccordionItem.tsx # Accessible collapsible accordion item
+├── data/
+│   ├── faq.ts            # FAQ structured data
+│   ├── features.ts       # Features matrix data
+│   └── pricing.ts        # Pricing plan tiers data
+├── lib/
+│   └── utils.ts          # clsx + tailwind-merge helper (cn)
+├── store/
+│   └── uiStore.ts        # Zustand UI state (mobile menu & FAQ accordion)
+└── action.md             # Micro-step build tracking guide
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+- Node.js 18.x or later
+- npm or pnpm or yarn
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DeveloperSRGonline/devos-landing.git
+   cd devos-landing
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Build for Production
+
+```bash
+npm run build
+npm run start
+```
+
+---
+
+## 🎨 Responsive Breakpoints
+
+DevOS is tailored for flawless display across all device sizes:
+- **Mobile:** 375px+
+- **Tablet:** 768px+
+- **Desktop:** 1280px+
+
+---
+
+## 📄 License
+
+MIT © 2026 DeveloperSRG
