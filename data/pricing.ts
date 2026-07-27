@@ -1,6 +1,9 @@
 export interface PricingPlan {
   name: string;
-  price: string;
+  price: string; // kept for backwards compatibility
+  priceMonthly: string;
+  priceYearly: string;
+  yearlyNote?: string;
   tagline: string;
   features: string[];
   ctaLabel: string;
@@ -11,6 +14,8 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Starter",
     price: "$0",
+    priceMonthly: "$0",
+    priceYearly: "$0",
     tagline: "Perfect for individual developers starting out.",
     features: [
       "Up to 3 active projects",
@@ -24,6 +29,9 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Pro",
     price: "$12",
+    priceMonthly: "$9",
+    priceYearly: "$7",
+    yearlyNote: "Billed $84/yr",
     tagline: "For active developers managing multiple complex projects.",
     features: [
       "Unlimited active projects",
@@ -38,6 +46,9 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Team",
     price: "$29",
+    priceMonthly: "$24",
+    priceYearly: "$19",
+    yearlyNote: "Billed $228/yr",
     tagline: "For small dev teams sharing project knowledge & snippets.",
     features: [
       "Everything in Pro",

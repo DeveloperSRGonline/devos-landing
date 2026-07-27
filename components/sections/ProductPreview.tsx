@@ -21,7 +21,7 @@ export function ProductPreview() {
 
         {/* Interactive / Annotated Mockup Container */}
         <div className="relative">
-          <DashboardMockup />
+          <DashboardMockup interactive={true} />
 
           {/* Annotations (Desktop Overlay) */}
           <div className="hidden lg:block">
