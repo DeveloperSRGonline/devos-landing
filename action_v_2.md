@@ -46,7 +46,7 @@ Follow top to bottom, in order. Each phase is an independent, completable unit w
 - Use `crypto.randomUUID()` (or `Date.now().toString()`) for ID generation in `add*` actions.
 - Compute `wordCount` automatically in `addNote` from `body.trim().split(/\s+/).length`.
 
-### A.4 Create `data/demo.ts`
+### A.4 Create `data/demo.ts` (Done)
 - Export the following seed arrays (all typed using `types/workspace.ts`):
   - `seedProjects` — 3 entries: `devos-core` (blue, `FolderGit2`), `api-gateway` (green, `Server`), `auth-service` (purple, `Shield`)
   - `seedNotes` — 3 notes belonging to `p1` (`devos-core`), with realistic developer content (architecture decisions, setup notes)
@@ -55,7 +55,7 @@ Follow top to bottom, in order. Each phase is an independent, completable unit w
   - `seedLearningItems` — 2 items in `p2`: Next.js App Router docs (`in-progress`), Zustand docs (`todo`)
 - All IDs must be short stable strings (`"p1"`, `"n1"`, `"s1"`, etc.) so seed data can be reliably detected on first load.
 
-### A.5 Extend `data/pricing.ts`
+### A.5 Extend `data/pricing.ts` (Done)
 - Open the existing pricing data file.
 - Add `priceMonthly` and `priceYearly` string fields to each plan (keep any existing `price` field for backwards compatibility if it is used elsewhere).
   - Starter: `"$0"` / `"$0"`
