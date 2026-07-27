@@ -215,28 +215,13 @@ git commit -m "feat: add typed content data for features, pricing, and FAQ"
 
 ---
 
-## PHASE 7 — Hero Section
+## PHASE 7 — Hero Section (Completed)
 
-### 7.1 Build `components/mockups/DashboardMockup.tsx` (basic version first)
-- A static JSX/CSS illustration: outer rounded panel representing a browser/app window, a left sidebar list (mock project names), a right content area with 2–3 mock "linked item" cards (note, snippet, AI chat icons + short labels).
-- No real data-fetching — everything is hardcoded JSX for visual effect.
-- Keep this version simple; you'll reuse/expand it in Phase 9 for Product Preview.
-
-### 7.2 Build `components/sections/Hero.tsx`
-- `<section id="hero">` with two-column layout (`grid md:grid-cols-2` or similar): text block left, `<DashboardMockup />` right (stacks on mobile).
-- Text block: H1 headline, subheadline paragraph, two `Button`s (primary "Start Building Free", secondary "See How It Works" scrolling to `#how-it-works`).
-
-### 7.3 Add to `app/page.tsx`
-Import and render `<Hero />` first.
-
-### 7.4 Visual + responsive check
-Confirm mockup moves below text on mobile, beside text on desktop, and both CTAs are full-width stacked on mobile.
-
-### 7.5 Commit
-```bash
-git add .
-git commit -m "feat: build Hero section with dashboard mockup visual"
-```
+- [x] 7.1 Build `components/mockups/DashboardMockup.tsx` (basic version first)
+- [x] 7.2 Build `components/sections/Hero.tsx`
+- [x] 7.3 Add to `app/page.tsx`
+- [x] 7.4 Visual + responsive check
+- [x] 7.5 Commit (`feat: build Hero section with dashboard mockup visual`)
 
 **✅ Checkpoint:** Hero looks correct at all 3 breakpoints, CTAs are real buttons with focus states.
 
