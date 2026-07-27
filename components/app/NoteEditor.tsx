@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useWorkspaceStore } from "@/store/workspaceStore";
 import { Note } from "@/types/workspace";
-import { Plus, Trash2, Edit3, ArrowLeft, FileText } from "lucide-react";
+import { Plus, Trash2, ArrowLeft, FileText, Sparkles, Clock, Hash } from "lucide-react";
 
 export function NoteEditor() {
   const { notes, activeProjectId, addNote, updateNote, deleteNote } =
@@ -71,81 +71,96 @@ export function NoteEditor() {
 
   if (isEditing) {
     return (
-      <div className="space-y-4">
+      <div className="space-y-6 animate-in fade-in duration-200">
         <div className="flex items-center justify-between">
           <button
             onClick={handleCancel}
-            className="flex items-center gap-2 text-xs text-white/60 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-xs font-medium text-white/60 hover:text-white transition-colors group"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to Notes
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+            <span>Back to Notes</span>
           </button>
           <div className="flex items-center gap-3">
             <button
               onClick={handleCancel}
-              className="px-3 py-1.5 rounded-lg text-xs text-white/60 hover:bg-white/5 transition-all"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all"
             >
               Cancel
             </button>
             <button
               onClick={handleSave}
-              className="px-4 py-1.5 rounded-lg text-xs font-semibold bg-accent text-white hover:bg-accent/90 transition-all shadow-md shadow-accent/20"
+              className="px-4 py-2 rounded-xl text-xs font-semibold bg-accent text-white hover:bg-accent-hover transition-all shadow-lg shadow-accent/20 flex items-center gap-1.5"
             >
-              Save Note
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Save Note</span>
             </button>
           </div>
         </div>
 
-        <input
-          type="text"
-          placeholder="Note Title..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="w-full bg-transparent border-b border-white/10 pb-2 text-xl font-bold text-white focus:outline-none focus:border-accent transition-all placeholder:text-white/30"
-        />
+        <div className="space-y-4 bg-black/40 border border-white/10 rounded-2xl p-6 shadow-inner">
+          <input
+            type="text"
+            placeholder="Note Title..."
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full bg-transparent border-b border-white/10 pb-3 text-xl font-bold text-white focus:outline-none focus:border-accent transition-all placeholder:text-white/20 tracking-tight"
+          />
 
-        <textarea
-          placeholder="Write your note here..."
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-          className="w-full min-h-[300px] bg-black/20 border border-white/10 rounded-xl p-4 text-sm text-white/90 focus:outline-none focus:border-accent transition-all resize-y placeholder:text-white/30"
-        />
+          <textarea
+            placeholder="Write markdown or context notes here..."
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+            className="w-full min-h-[340px] bg-transparent text-sm text-white/90 focus:outline-none transition-all resize-y placeholder:text-white/20 leading-relaxed font-sans"
+          />
+        </div>
 
-        <div className="flex items-center justify-between text-xs text-white/40 pt-2 border-t border-white/5">
-          <span>
-            {wordCount} words | {charCount} characters
+        <div className="flex items-center justify-between text-xs text-white/40 px-2">
+          <span className="flex items-center gap-2">
+            <Hash className="w-3.5 h-3.5 text-accent" />
+            {wordCount} words &bull; {charCount} characters
           </span>
-          {editingNoteId && <span>Auto-saving enabled (2s debounce)</span>}
+          {editingNoteId && (
+            <span className="flex items-center gap-1.5 text-accent/80 font-mono text-[11px]">
+              <Clock className="w-3 h-3" /> Auto-saving enabled
+            </span>
+          )}
         </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-white/80">
-          Notes ({projectNotes.length})
-        </h3>
+        <div>
+          <h3 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
+            <FileText className="w-4 h-4 text-accent" />
+            Context Notes
+          </h3>
+          <p className="text-xs text-white/50">Architecture docs, setup notes, and decisions for this workspace.</p>
+        </div>
         <button
           onClick={handleStartNewNote}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-accent text-white hover:bg-accent/90 transition-all shadow-md shadow-accent/20"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-accent text-white hover:bg-accent-hover transition-all shadow-lg shadow-accent/20"
         >
-          <Plus className="w-3.5 h-3.5" /> New Note
+          <Plus className="w-4 h-4" /> New Note
         </button>
       </div>
 
       {projectNotes.length === 0 ? (
-        <div className="flex flex-col items-center justify-center p-12 text-center border border-dashed border-white/10 rounded-xl">
-          <FileText className="w-10 h-10 text-white/20 mb-3" />
-          <p className="text-sm text-white/60 mb-1">No notes yet</p>
-          <p className="text-xs text-white/40 mb-4">
-            Create notes linked to this project to keep your ideas organized.
+        <div className="flex flex-col items-center justify-center p-14 text-center border border-dashed border-white/10 rounded-2xl bg-white/[0.01]">
+          <div className="p-4 rounded-2xl bg-white/5 text-white/30 mb-4">
+            <FileText className="w-8 h-8" />
+          </div>
+          <p className="text-sm font-medium text-white/70 mb-1">No notes saved yet</p>
+          <p className="text-xs text-white/40 mb-5 max-w-xs">
+            Scaffold architectural specs, env variable mappings, or design decisions linked to this project.
           </p>
           <button
             onClick={handleStartNewNote}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-white transition-all border border-white/10"
           >
-            <Plus className="w-3.5 h-3.5" /> New Note
+            <Plus className="w-4 h-4" /> Create Note
           </button>
         </div>
       ) : (
@@ -154,10 +169,10 @@ export function NoteEditor() {
             <div
               key={note.id}
               onClick={() => handleStartEditNote(note)}
-              className="group relative p-4 rounded-xl bg-black/20 border border-white/10 hover:border-accent/40 cursor-pointer transition-all hover:shadow-lg hover:shadow-accent/5 flex flex-col justify-between"
+              className="group relative p-5 rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 hover:border-accent/40 cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-accent/5 flex flex-col justify-between"
             >
-              <div>
-                <div className="flex items-start justify-between gap-2 mb-2">
+              <div className="space-y-2">
+                <div className="flex items-start justify-between gap-3">
                   <h4 className="text-sm font-semibold text-white group-hover:text-accent transition-colors line-clamp-1">
                     {note.title}
                   </h4>
@@ -166,22 +181,22 @@ export function NoteEditor() {
                       e.stopPropagation();
                       deleteNote(note.id);
                     }}
-                    className="opacity-0 group-hover:opacity-100 p-1 text-white/40 hover:text-red-400 rounded transition-all"
+                    className="opacity-0 group-hover:opacity-100 p-1.5 text-white/40 hover:text-red-400 rounded-lg hover:bg-red-500/10 transition-all shrink-0"
                     title="Delete Note"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
                 </div>
-                <p className="text-xs text-white/60 line-clamp-3 mb-4 leading-relaxed">
-                  {note.body || "(Empty note)"}
+                <p className="text-xs text-white/60 line-clamp-3 leading-relaxed font-sans">
+                  {note.body || "(Empty note content)"}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between text-[10px] text-white/40 pt-2 border-t border-white/5">
-                <span className="px-2 py-0.5 rounded bg-white/5 text-white/60 font-medium">
+              <div className="flex items-center justify-between text-[11px] text-white/40 pt-4 border-t border-white/5 mt-4">
+                <span className="px-2 py-0.5 rounded-md bg-white/5 border border-white/5 text-white/60 font-mono">
                   {note.wordCount} words
                 </span>
-                <span>{new Date(note.createdAt).toLocaleDateString()}</span>
+                <span>{new Date(note.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}</span>
               </div>
             </div>
           ))}
@@ -194,3 +209,4 @@ export function NoteEditor() {
 export function NotesPanel() {
   return <NoteEditor />;
 }
+
