@@ -186,32 +186,30 @@ git commit -m "feat: add typed content data for features, pricing, and FAQ"
 
 ---
 
-## PHASE 6 — Layout: Navbar & Footer
+## PHASE 6 — Layout: Navbar & Footer (Completed)
 
-### 6.1 Build `components/layout/Navbar.tsx`
-- Left: "DevOS" logo/wordmark.
-- Center/right: nav links (Features, How it Works, Pricing, FAQ) as anchor links to section IDs.
-- Right: `Button` (primary, "Start Free").
-- Mobile: hamburger icon (Lucide `Menu`/`X`) wired to `useUIStore().isMobileMenuOpen`; when open, show a full-width dropdown/slide-in with the same links stacked.
-- Make it `sticky top-0`, transparent by default; add a scroll listener (or CSS-only `backdrop-blur` always-on) so it reads clearly over the hero.
+### 6.1 Build `components/layout/Navbar.tsx` (Completed)
+- [x] Left: "DevOS" logo/wordmark.
+- [x] Center/right: nav links (Features, How it Works, Pricing, FAQ) as anchor links to section IDs.
+- [x] Right: `Button` (primary, "Start Free").
+- [x] Mobile: hamburger icon (Lucide `Menu`/`X`) wired to `useUIStore().isMobileMenuOpen`; when open, show a full-width dropdown/slide-in with the same links stacked.
+- [x] Make it `sticky top-0`, transparent/backdrop-blur.
 
-### 6.2 Build `components/layout/Footer.tsx`
-- Logo + tagline ("Your development knowledge, finally connected.")
-- Link columns: Product (Features, Pricing, FAQ), Company (About, Contact — can be `#` placeholders since no real pages exist), Legal (Privacy, Terms — same).
-- Social icons row (GitHub, Twitter/X, LinkedIn) using Lucide icons linking out (use real personal/project links or `#`).
-- Bottom line: `© 2026 DevOS. Built by [Your Name].`
+### 6.2 Build `components/layout/Footer.tsx` (Completed)
+- [x] Logo + tagline ("Your development knowledge, finally connected.")
+- [x] Link columns: Product, Company, Legal.
+- [x] Social icons row using Lucide icons.
+- [x] Bottom line: `© 2026 DevOS. Built by DeveloperSRG.`
 
-### 6.3 Wire both into `app/layout.tsx`
-Import `Navbar` and `Footer`, wrap `{children}` between them.
+### 6.3 Wire both into `app/layout.tsx` (Completed)
+- [x] Import `Navbar` and `Footer`, wrap `{children}` between them.
 
-### 6.4 Visual check at 375px, 768px, 1280px
-Resize browser / use device toolbar. Confirm hamburger appears only on mobile and nav is horizontal on desktop.
+### 6.4 Visual check at 375px, 768px, 1280px (Completed)
+- [x] Responsive layout verified.
 
-### 6.5 Commit
-```bash
-git add .
-git commit -m "feat: build responsive Navbar and Footer with mobile menu"
-```
+### 6.5 Commit (Completed)
+- [x] `git add .`
+- [x] `git commit -m "feat: build responsive Navbar and Footer with mobile menu"`
 
 **✅ Checkpoint:** Navbar + Footer render on every page, mobile menu opens/closes correctly, keyboard-accessible.
 
