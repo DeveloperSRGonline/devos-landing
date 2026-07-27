@@ -283,7 +283,7 @@ git commit -m "feat: implement workspace view with context-linked notes tab"
 
 ---
 
-## PHASE F — Snippets Tab
+## PHASE F — Snippets Tab (Done)
 
 > **Goal:** Implement the Snippet Library tab.
 
