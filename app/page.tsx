@@ -4,6 +4,8 @@ import { Features } from "@/components/sections/Features";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { ProductPreview } from "@/components/sections/ProductPreview";
 import { Pricing } from "@/components/sections/Pricing";
+import { FAQ } from "@/components/sections/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
   return (
@@ -14,7 +16,10 @@ export default function Home() {
       <HowItWorks />
       <ProductPreview />
       <Pricing />
+      <FAQ />
+      <FinalCTA />
     </main>
   );
 }
+
 

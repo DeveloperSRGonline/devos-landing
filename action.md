@@ -266,25 +266,21 @@ git commit -m "feat: add typed content data for features, pricing, and FAQ"
 
 ---
 
-## PHASE 10 — FAQ & Final CTA
+## PHASE 10 — FAQ & Final CTA (Completed)
 
-### 10.1 Build `components/sections/FAQ.tsx`
-- `<section id="faq">`, H2 title.
-- Map over `data/faq.ts`, render each as an `AccordionItem`, controlled by `useUIStore().openFaqIndex` / `toggleFaq`.
-- Confirm keyboard operability (Tab to focus, Enter/Space to toggle).
+- [x] 10.1 Build `components/sections/FAQ.tsx`
+  - `<section id="faq">`, H2 title.
+  - Map over `data/faq.ts`, render each as an `AccordionItem`, controlled by `useUIStore().openFaqIndex` / `toggleFaq`.
+  - Confirm keyboard operability (Tab to focus, Enter/Space to toggle).
 
-### 10.2 Build `components/sections/FinalCTA.tsx`
-- Full-width band with gradient background (subtle, accent → accent-secondary), centered headline + single primary `Button`.
+- [x] 10.2 Build `components/sections/FinalCTA.tsx`
+  - Full-width band with gradient background (subtle, accent → accent-secondary), centered headline + single primary `Button`.
 
-### 10.3 Add both to `app/page.tsx`, in order: FAQ → FinalCTA (after Pricing, before Footer — Footer already lives in `layout.tsx`).
+- [x] 10.3 Add both to `app/page.tsx`, in order: FAQ → FinalCTA (after Pricing, before Footer — Footer already lives in `layout.tsx`).
 
-### 10.4 Full page scroll-through check on all 3 breakpoints — confirm every section appears once, in correct order, no gaps/overlaps.
+- [x] 10.4 Full page scroll-through check on all 3 breakpoints — confirm every section appears once, in correct order, no gaps/overlaps.
 
-### 10.5 Commit
-```bash
-git add .
-git commit -m "feat: add FAQ accordion and FinalCTA section, complete section set"
-```
+- [x] 10.5 Commit (`feat: add FAQ accordion and FinalCTA section, complete section set`)
 
 **✅ Checkpoint:** all 10 sections present, page is feature-complete top to bottom.
 
