@@ -169,18 +169,14 @@ Keep it small — this store should not grow beyond these two concerns for this 
 
 ---
 
-## PHASE 5 — Data Files
+## PHASE 5 — Data Files (Completed)
 
-### 5.1 Fill `data/features.ts`
-Export a typed array of 6 objects: `{ icon: LucideIcon, title: string, description: string }`, using the 6 features from the plan doc (Project Workspaces, Context-Linked Notes, AI Chat Memory, Snippet Library, Unified Search, Learning Tracker).
+- [x] 5.1 Fill `data/features.ts`
+- [x] 5.2 Fill `data/pricing.ts`
+- [x] 5.3 Fill `data/faq.ts`
+- [x] 5.4 Commit
 
-### 5.2 Fill `data/pricing.ts`
-Export a typed array of 3 plan objects (Starter/Pro/Team) with `name, price, tagline, features: string[], ctaLabel, isPopular boolean`, matching the pricing table in the plan doc exactly.
-
-### 5.3 Fill `data/faq.ts`
-Export a typed array of `{ question: string, answer: string }` — the 6 FAQ items from the plan doc.
-
-### 5.4 Commit
+**✅ Checkpoint:** three data files export real, typed content — no placeholder text anywhere.
 ```bash
 git add .
 git commit -m "feat: add typed content data for features, pricing, and FAQ"
