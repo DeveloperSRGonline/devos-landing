@@ -9,7 +9,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       <TrustStrip />
       <Features />
@@ -18,8 +18,9 @@ export default function Home() {
       <Pricing />
       <FAQ />
       <FinalCTA />
-    </main>
+    </>
   );
 }
+
 
 

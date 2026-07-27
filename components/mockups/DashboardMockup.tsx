@@ -14,7 +14,8 @@ import {
 
 export function DashboardMockup() {
   return (
-    <div className="w-full rounded-2xl border border-white/10 bg-surface/80 p-4 shadow-2xl backdrop-blur-md overflow-hidden">
+    <div aria-hidden="true" className="w-full rounded-2xl border border-white/10 bg-surface/80 p-4 shadow-2xl backdrop-blur-md overflow-hidden select-none">
+
       {/* Top Header Bar */}
       <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
         <div className="flex items-center gap-2">
