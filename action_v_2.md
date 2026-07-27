@@ -529,21 +529,21 @@ git commit -m "fix: polish empty states, mobile layout, and verify V1 landing pa
 ### K.2 Success criteria checklist
 Run through every item in the "Success Criteria for V2" section of `plan_v_2.md` manually:
 
-- [ ] Clicking "Start Building Free" navigates to `/app`
-- [ ] `/app` shows 3 pre-seeded projects in the sidebar
-- [ ] Switching projects updates workspace content
-- [ ] New project can be created via modal
-- [ ] Notes tab: create, edit, delete, auto-save works
-- [ ] Snippets tab: add, copy to clipboard, delete works
-- [ ] AI Memory tab: save with tags, filter by tag, expand/collapse works
-- [ ] Learning tab: add resource, status cycles through 3 states, progress bar updates
-- [ ] Cmd+K opens search overlay, returns grouped results, Enter navigates correctly
-- [ ] Pricing toggle switches between Monthly and Yearly prices
-- [ ] ProductPreview DashboardMockup sidebar is clickable
-- [ ] All V1 landing page sections render correctly
-- [ ] `npm run build` passes with zero errors
-- [ ] `/app` sidebar collapses to a drawer on mobile
-- [ ] localStorage data persists after page refresh
+- [x] Clicking "Start Building Free" navigates to `/app`
+- [x] `/app` shows 3 pre-seeded projects in the sidebar
+- [x] Switching projects updates workspace content
+- [x] New project can be created via modal
+- [x] Notes tab: create, edit, delete, auto-save works
+- [x] Snippets tab: add, copy to clipboard, delete works
+- [x] AI Memory tab: save with tags, filter by tag, expand/collapse works
+- [x] Learning tab: add resource, status cycles through 3 states, progress bar updates
+- [x] Cmd+K opens search overlay, returns grouped results, Enter navigates correctly
+- [x] Pricing toggle switches between Monthly and Yearly prices
+- [x] ProductPreview DashboardMockup sidebar is clickable
+- [x] All V1 landing page sections render correctly
+- [x] `npm run build` passes with zero errors
+- [x] `/app` sidebar collapses to a drawer on mobile
+- [x] localStorage data persists after page refresh
 
 Check off each item. Do not proceed until all pass.
 
