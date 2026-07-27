@@ -15,7 +15,7 @@ Follow top to bottom, in order. Each phase is an independent, completable unit w
 
 > **Goal:** Lay the data foundation. Nothing renders yet — this phase is purely TypeScript types, store logic, and seed content. All subsequent phases depend on this.
 
-### A.1 Create `types/workspace.ts`
+### A.1 Create `types/workspace.ts` (Done)
 - Create the file at the project root under `types/workspace.ts`.
 - Define and export all shared interfaces used across the app:
   - `Project` — `id`, `name`, `color`, `icon`, `createdAt`
@@ -63,13 +63,13 @@ Follow top to bottom, in order. Each phase is an independent, completable unit w
   - Team: `"$24"` / `"$19"` (per-month equivalent)
 - Add an optional `yearlyNote` string field: e.g. `"Billed $84/yr"` for Pro.
 
-### A.6 Verify no TypeScript errors
+### A.6 Verify no TypeScript errors (Done)
 ```bash
 npx tsc --noEmit
 ```
 Fix any type errors before proceeding.
 
-### A.7 Commit
+### A.7 Commit (Done)
 ```bash
 git add .
 git commit -m "feat: add workspace store, types, and demo seed data"
