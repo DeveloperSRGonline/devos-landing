@@ -15,9 +15,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevOS — Your development knowledge, finally connected.",
-  description: "DevOS connects your codebase, documentation, snippets, and workflow in one developer-first operating system.",
+  title: {
+    default: "DevOS — Next-Gen Developer Context & Knowledge System",
+    template: "%s | DevOS",
+  },
+  description:
+    "DevOS connects your code snippets, project notes, architecture specs, and AI prompts into a unified developer operating system.",
+  keywords: [
+    "developer tools",
+    "context system",
+    "knowledge management",
+    "code snippets",
+    "developer notes",
+    "AI coding assistant",
+  ],
+  authors: [{ name: "DeveloperSRG" }],
+  creator: "DeveloperSRG",
+  openGraph: {
+    title: "DevOS — Your development knowledge, finally connected.",
+    description:
+      "DevOS connects your code snippets, project notes, architecture specs, and AI prompts into a unified developer operating system.",
+    url: "https://devos.vercel.app",
+    siteName: "DevOS",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DevOS — Next-Gen Developer Context & Knowledge System",
+    description:
+      "DevOS connects your code snippets, project notes, architecture specs, and AI prompts into a unified developer operating system.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
 
 export default function RootLayout({
   children,

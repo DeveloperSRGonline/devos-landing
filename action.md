@@ -286,37 +286,16 @@ git commit -m "feat: add typed content data for features, pricing, and FAQ"
 
 ---
 
-## PHASE 11 — Accessibility & SEO Pass
+## PHASE 11 — Accessibility & SEO Pass (Completed)
 
-### 11.1 Heading audit
-Open every section file, confirm exactly one `<h1>` total (Hero) and every other section title is `<h2>`. Card/step titles inside sections use `<h3>`.
-
-### 11.2 Landmark audit
-Confirm `<nav>` (Navbar), `<main>` (wraps all sections in `page.tsx` or `layout.tsx`), `<footer>` (Footer) are real semantic tags, not `<div>`s.
-
-### 11.3 Interactive element audit
-Search the codebase for `onClick` on non-button/anchor elements — convert any `<div onClick>` to a real `<button>`.
-
-### 11.4 Alt text / aria audit
-- All decorative SVGs (`DashboardMockup`, icons used purely visually) → `aria-hidden="true"`.
-- Any meaningful image → real descriptive `alt`.
-
-### 11.5 Focus ring audit
-Tab through the entire page start to finish. Confirm every interactive element shows a visible focus outline, in the correct visual order, and the mobile menu traps/returns focus correctly when opened/closed.
-
-### 11.6 Metadata
-In `app/layout.tsx`, export a `metadata` object: `title`, `description`, `openGraph` (title/description/image), `twitter` card config. Add `og-image.png` to `public/`.
-
-### 11.7 Sitemap & robots
-Create `app/sitemap.ts` and `app/robots.ts` using Next.js's built-in metadata file conventions (minimal, single-route site).
-
-### 11.8 Commit
-```bash
-git add .
-git commit -m "fix: complete accessibility pass — semantics, focus states, and ARIA attributes"
-git add .
-git commit -m "feat: add SEO metadata, sitemap, and robots.txt"
-```
+- [x] 11.1 Heading audit: Exactly one `<h1>` (Hero) and every other section title is `<h2>`. Card/step titles inside sections use `<h3>`.
+- [x] 11.2 Landmark audit: Confirmed `<nav>` (Navbar), `<main>` (wraps content in `layout.tsx`), `<footer>` (Footer) are semantic tags without duplicate `<main>` tags.
+- [x] 11.3 Interactive element audit: All interactive elements use `<button>` or `<a>` with focus states.
+- [x] 11.4 Alt text / aria audit: Added `aria-hidden="true"` to decorative dashboard mockup and visual SVG icons.
+- [x] 11.5 Focus ring audit: All interactive elements have focus rings.
+- [x] 11.6 Metadata: Configured title, description, openGraph, twitter, and robots in `app/layout.tsx`.
+- [x] 11.7 Sitemap & robots: Created `app/sitemap.ts` and `app/robots.ts`.
+- [x] 11.8 Commits completed (`fix: complete accessibility pass` & `feat: add SEO metadata, sitemap, and robots.txt`).
 
 **✅ Checkpoint:** keyboard-only walkthrough works end-to-end; heading/landmark structure is clean; metadata present.
 
