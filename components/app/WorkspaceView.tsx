@@ -3,6 +3,7 @@
 import React from "react";
 import { useWorkspaceStore } from "@/store/workspaceStore";
 import { NotesPanel } from "./NoteEditor";
+import { SnippetsPanel } from "./SnippetsPanel";
 
 export function WorkspaceView() {
   const { activeTab, setActiveTab } = useWorkspaceStore();
@@ -39,7 +40,7 @@ export function WorkspaceView() {
       {/* Tab Content Panels */}
       <div className="p-6 rounded-2xl bg-surface/50 border border-white/10 min-h-[400px]">
         {activeTab === "notes" && <NotesPanel />}
-        {activeTab === "snippets" && <div className="text-center py-20 text-white/50 text-sm">Snippets coming soon</div>}
+        {activeTab === "snippets" && <SnippetsPanel />}
         {activeTab === "ai-memory" && <div className="text-center py-20 text-white/50 text-sm">AI Memory coming soon</div>}
         {activeTab === "learning" && <div className="text-center py-20 text-white/50 text-sm">Learning coming soon</div>}
       </div>
