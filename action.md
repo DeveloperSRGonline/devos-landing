@@ -301,27 +301,13 @@ git commit -m "feat: add typed content data for features, pricing, and FAQ"
 
 ---
 
-## PHASE 12 — Performance Pass
+## PHASE 12 — Performance Pass (Completed)
 
-### 12.1 Replace any raster images with `next/image`, explicit `width`/`height`.
-### 12.2 Confirm fonts use `next/font` with `display: swap` (already done in Phase 2 — just re-verify).
-### 12.3 Run a production build locally
-```bash
-npm run build
-```
-Fix any build errors/warnings shown.
-
-### 12.4 Run bundle check (optional but useful)
-```bash
-npm run build -- --profile
-```
-or inspect the `.next` build output summary for unusually large chunks.
-
-### 12.5 Commit
-```bash
-git add .
-git commit -m "perf: optimize images and verify production build output"
-```
+- [x] 12.1 Image check: Visual components use Lucide SVGs & CSS mockups with no unoptimized raster images.
+- [x] 12.2 Font check: `Geist` and `Geist_Mono` loaded via `next/font/google`.
+- [x] 12.3 Local production build verified (`npm run build` passes with zero errors/warnings).
+- [x] 12.4 Bundle verification completed.
+- [x] 12.5 Git committed (`perf: optimize images and verify production build output`).
 
 **✅ Checkpoint:** `npm run build` completes with no errors/warnings.
 
