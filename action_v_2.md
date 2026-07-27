@@ -115,12 +115,12 @@ git commit -m "feat: add workspace store, types, and demo seed data"
 - Change the CTA button to a Next.js `<Link href="/app">` (same pattern as Hero).
 - No other changes to this component.
 
-### B.5 Visual check
+### B.5 Visual check (Done)
 - `npm run dev` → scroll through the entire landing page.
 - Confirm: pricing toggle changes prices, all CTA buttons navigate to `/app` (expect a 404 for now — that's fine), "Try it →" links are visible but small.
 - Confirm: no existing section layout has broken.
 
-### B.6 Commit
+### B.6 Commit (Done)
 ```bash
 git add .
 git commit -m "feat: wire landing page CTAs to /app route and add pricing toggle"
