@@ -5,6 +5,7 @@ import { useWorkspaceStore } from "@/store/workspaceStore";
 import { NotesPanel } from "./NoteEditor";
 import { SnippetsPanel } from "./SnippetsPanel";
 import { AIMemoryPanel } from "./AIMemoryPanel";
+import { LearningPanel } from "./LearningPanel";
 
 export function WorkspaceView() {
   const { activeTab, setActiveTab } = useWorkspaceStore();
@@ -43,7 +44,7 @@ export function WorkspaceView() {
         {activeTab === "notes" && <NotesPanel />}
         {activeTab === "snippets" && <SnippetsPanel />}
         {activeTab === "ai-memory" && <AIMemoryPanel />}
-        {activeTab === "learning" && <div className="text-center py-20 text-white/50 text-sm">Learning coming soon</div>}
+        {activeTab === "learning" && <LearningPanel />}
       </div>
     </div>
   );
